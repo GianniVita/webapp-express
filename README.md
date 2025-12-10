@@ -32,7 +32,7 @@ Un'app di `movies` in cui si potranno lasciare `recensione` pubbliche
 6. [x] Install dependencies:
     - [x] `npm install express mysql2`
 
-7. [ ] create project structure:
+7. [x] create project structure:
     ```
 webapp-express
 ├── server.js
@@ -53,14 +53,14 @@ webapp-express
       ```
 
 ### 3. Configuration
-8.  [ ] Create '.env' file with database credentials:
+8.  [x] Create '.env' file with database credentials:
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=your_password
 DB_NAME=movies_db
 PORT=3000
-9. [ ] Create '•gitignore" file (add node_modules, -env)
-10. [ ] Setup database connection in '/config/db.js'
+9. [x] Create '•gitignore" file (add node_modules, -env)
+10. [x] Setup database connection in '/config/db.js'
 11. [ ] Test database connection
 
 ### 4. Express Application Setup
