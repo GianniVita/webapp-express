@@ -28,11 +28,11 @@ Un'app di `movies` in cui si potranno lasciare `recensione` pubbliche
 4. [ ] Verify database connection and test queries
 
 ### 2. Project Setup
-5. [ ] Initializiation npm project (`npm init -y`)
-6. [ ] Install dependencies:
+5. [x] Initializiation npm project (`npm init -y`)
+6. [x] Install dependencies:
     - [ ] `npm install express mysql2`
-    - [ ] `npm install dotenv` (per le variabili d'ambiente)
-    - [ ] `npm install --save-dev nodemon` (pe rdevelopment)
+    <!-- - [ ] `npm install dotenv` (per le variabili d'ambiente)
+    - [ ] `npm install --save-dev nodemon` (per rdevelopment) -->
 
 7. [ ] create project structure:
     ```

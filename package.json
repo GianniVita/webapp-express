@@ -1,14 +1,15 @@
 {
   "name": "webapp-express",
   "version": "1.0.0",
-  "description": "<!-- Esercizio Ciao Classe, è ora di mettere alla prova le vostre conoscenze iniziando a costruire la vostra prima app completa! Ecco i primi step",
+  "description": "Un'app di `movies` in cui si potranno lasciare `recensione` pubbliche",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GianniVita/webapp-express.git"
+    "url": "git+https://github.com/GianniVita/webapp-express.git",
+    "dev": "node --watch --env-file=.env server.js"
   },
   "keywords": [],
   "author": "",
