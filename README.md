@@ -25,16 +25,16 @@ Un'app di `movies` in cui si potranno lasciare `recensione` pubbliche
 1. [x] Create tables schema and ER-diagram
 2. [x] Add database and tables usando workbench
 3. [x] Per la lista dei film e reviews usiamo il DB passato dall'insegnante
-4. [] Verify database connection and test queries
+4. [ ] Verify database connection and test queries
 
 ### 2. Project Setup
-5. [] Initializiation npm project (`npm init -y`)
-6. [] Install dependencies:
-    - [] `npm install express mysql2`
-    - [] `npm install dotenv` (per le variabili d'ambiente)
-    - [] `npm install --save-dev nodemon` (pe rdevelopment)
+5. [ ] Initializiation npm project (`npm init -y`)
+6. [ ] Install dependencies:
+    - [ ] `npm install express mysql2`
+    - [ ] `npm install dotenv` (per le variabili d'ambiente)
+    - [ ] `npm install --save-dev nodemon` (pe rdevelopment)
 
-7. [] create project structure:
+7. [ ] create project structure:
     ```
     /webapp-express
 |-- server-js
@@ -55,7 +55,7 @@ Un'app di `movies` in cui si potranno lasciare `recensione` pubbliche
     ```
 
 ### 3. Configuration
-8.  [] Create '.env' file with database credentials:
+8.  [ ] Create '.env' file with database credentials:
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=your_password
@@ -75,7 +75,19 @@ PORT=3000
 ### 5. Routes a& Controllers
 17. [ ] Create `/routers/movieRouters.js` with routes:
     - [ ] GET `/api/movies` - lista di tutti i film
-    - [ ] GET `/api/movies/ :id` - dettagli di un singolo film con recensioni
-18. [ ] Create `/controllers/movies`
+    - [ ] GET `/api/movies/:id` - dettagli di un singolo film con recensioni
+18. [ ] Create `/controllers/moviesControllers.js` with:
+    - [ ] `index` function - get all movies
+    - [ ] `show` function - get movies by ID with reviews
+19. [ ] Import and use router in `server.js`
 
+### 6. Middlewares
+20. [ ] Create `/middlewares/notFound.js` - handle 404 errors
+21. [ ] Create `/middlewares/errorHandler.js` - handle general errors
+22. [ ] Add middlewares to `server.js` (after routes)
+
+### 7. Testing & Refinenement
+23. [ ] Test GET `/api/movies` endpoint
+24. [ ] Test GEt `api/movies/:id` endpoint
+25. [ ] 
  
