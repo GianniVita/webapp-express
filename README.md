@@ -25,7 +25,7 @@ Un'app di `movies` in cui si potranno lasciare `recensione` pubbliche
 1. [x] Create tables schema and ER-diagram
 2. [x] Add database and tables usando workbench
 3. [x] Per la lista dei film e reviews usiamo il DB passato dall'insegnante
-4. [ ] Verify database connection and test queries
+4. [x] Verify database connection and test queries
 
 ### 2. Project Setup
 5. [x] Initializiation npm project (`npm init -y`)
@@ -61,10 +61,10 @@ DB_NAME=movies_db
 PORT=3000
 9. [x] Create '•gitignore" file (add node_modules, -env)
 10. [x] Setup database connection in '/config/db.js'
-11. [ ] Test database connection
+11. [x] Test database connection
 
 ### 4. Express Application Setup
-12. [ ] Create `server.js` with basic Express setup
+12. [x] Create `server.js` with basic Express setup
 13. [ ] Add body parser middleware (`express.json()`)
 14. [ ] Add middleware for static assets (`express.static('public')`)
 14. [ ] Add root route(`/`)
