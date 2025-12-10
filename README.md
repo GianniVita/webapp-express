@@ -36,23 +36,23 @@ Un'app di `movies` in cui si potranno lasciare `recensione` pubbliche
 
 7. [ ] create project structure:
     ```
-    /webapp-express
-|-- server-js
-|-- .env
-|-- .gitignore
-|-- package. json
-|--/config
-|-— db.js
-|--/controllers
-   -- movieController.js
-|--/routers
-    |- movieRouter-js
-|--/middlewares
-    |-- notFound. js
-    |--errorHandler-js
-    |--/public
-        |-- /images
-    ```
+webapp-express
+├── server.js
+├── .env
+├── .gitignore
+├── package.json
+├── config
+│   └── db.js
+├── controllers
+│   └── movieController.js
+├── routers
+│   └── movieRouter.js
+├── middlewares
+│   ├── notFound.js
+│   └── errorHandler.js
+└── public
+    └── images
+      ```
 
 ### 3. Configuration
 8.  [ ] Create '.env' file with database credentials:
