@@ -15,7 +15,7 @@ Inserire le vostre rotte in un router
 Inserire un middleware per le rotte inesistenti
 Inserire un middleware per la gestione errori -->
 
-## webapp for movies
+## Webapp for movies
 
 Un'app di `movies` in cui si potranno lasciare `recensione` pubbliche
 
@@ -89,5 +89,12 @@ PORT=3000
 ### 7. Testing & Refinenement
 23. [ ] Test GET `/api/movies` endpoint
 24. [ ] Test GEt `api/movies/:id` endpoint
-25. [ ] 
+25. [ ] Add error handling for invalid IDs
+26. [ ] Test 404 and error middlewares
+
+### 8. Bonus Features
+27. [ ] Add movies images to `/public/images`
+28. [ ] Add image URLs to movies responses 
+29. [ ] Add validation for request parameters 
+30. [ ] Add
  

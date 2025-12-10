@@ -1,0 +1,23 @@
+{
+  "name": "webapp-express",
+  "version": "1.0.0",
+  "description": "<!-- Esercizio Ciao Classe, è ora di mettere alla prova le vostre conoscenze iniziando a costruire la vostra prima app completa! Ecco i primi step",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GianniVita/webapp-express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GianniVita/webapp-express/issues"
+  },
+  "homepage": "https://github.com/GianniVita/webapp-express#readme",
+  "dependencies": {
+    "mysql2": "^3.15.3"
+  }
+}
