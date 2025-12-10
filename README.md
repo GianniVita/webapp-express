@@ -30,9 +30,7 @@ Un'app di `movies` in cui si potranno lasciare `recensione` pubbliche
 ### 2. Project Setup
 5. [x] Initializiation npm project (`npm init -y`)
 6. [x] Install dependencies:
-    - [ ] `npm install express mysql2`
-    <!-- - [ ] `npm install dotenv` (per le variabili d'ambiente)
-    - [ ] `npm install --save-dev nodemon` (per rdevelopment) -->
+    - [x] `npm install express mysql2`
 
 7. [ ] create project structure:
     ```
