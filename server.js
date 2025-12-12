@@ -3,6 +3,8 @@ const cors = require('cors')
 const app = express()
 const PORT =  3000
 const moviesRouter = require('./route/movies')
+const serverError = require('./middlewares/serverError')
+const notFound = require('./middlewares/notFound')
 
 app.use(cors({
     origin: 'http://localhost:5175'
@@ -26,13 +28,9 @@ app.get('/', (req, res)=>{
 app.use('/api/movies', moviesRouter)
 
 
-app.use((req, res, next)=>{
-    return res.status(500).json() 
-        
-})
+// server error(500) handling
+app.use(serverError)
 
 
-// Not found error handling
-app.use((req, res, next)=>{
-    res.status(404).json({message:'Route NOT Found'})
-})
+// Not found error(404) handling
+app.use(notFound)
