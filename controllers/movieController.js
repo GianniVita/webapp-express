@@ -14,24 +14,26 @@ const index = (req, res) => {
 const show = (req, res) => {
     const id = Number(req.params.id)
     const sql = 'SELECT * FROM movies WHERE id = ?'
+    const sqlReviews = 'SELECT id, name, vote, text, created_at FROM reviews WHERE movie_id = ? '
     
     connection.query(sql, [id], (err, results)=>{
         if(err) return res.status(500).json({error: true, message:err.message})
             //console.log(results);
         if(results.length === 0) return res.status(404).json({error: true, message:'Movie NOT Found'})
             
-        const movie = results[0]        
-            
+            const movie = results[0]        
+
+        connection.query(sqlReviews, [id], (errReviews, resultsReviews)=>{
+        if (errReviews) return res.status(500).json({ error: true, message: err.message }) 
+        console.log(resultsReviews);
+            movie.reviews = resultsReviews
         res.json(movie)
-
+        
+        })
+            
     })
-
-
 }
-
-
-
-
+            
 
 module.exports = {
     index,
