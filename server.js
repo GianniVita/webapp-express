@@ -24,3 +24,15 @@ app.get('/', (req, res)=>{
 })
 
 app.use('/api/movies', moviesRouter)
+
+
+app.use((req, res, next)=>{
+    return res.status(500).json() 
+        
+})
+
+
+// Not found error handling
+app.use((req, res, next)=>{
+    res.status(404).json({message:'Route NOT Found'})
+})
