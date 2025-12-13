@@ -82,9 +82,50 @@ const store = (req, res) => {
     })
 }
 
+const storeReview = (req, res) => {
+    const movieId = Number(req.params.id)
+    const { name, text, vote } = req.body
+
+    // Validazione campi obbligatori
+    if (!name || !vote) {
+        return res.status(400).json({
+            error: true,
+            message: 'Name and vote are required fields'
+        })
+    }
+
+    // Validazione voto (1-5)
+    if (vote < 1 || vote > 5) {
+        return res.status(400).json({
+            error: true,
+            message: 'Vote must be between 1 and 5'
+        })
+    }
+
+    const sql = `INSERT INTO reviews (movie_id, name, vote, text) VALUES (?, ?, ?, ?)`
+    const values = [movieId, name, vote, text || null]
+
+    connection.query(sql, values, (err, results) => {
+        if (err) return res.status(500).json({ error: true, message: err.message })
+
+        res.status(201).json({
+            success: true,
+            message: 'Review created successfully',
+            data: {
+                id: results.insertId,
+                movie_id: movieId,
+                name,
+                vote,
+                text
+            }
+        })
+    })
+}
+
 
 module.exports = {
     index,
     show,
-    store
+    store,
+    storeReview
 }
