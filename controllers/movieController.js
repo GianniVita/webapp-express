@@ -5,8 +5,14 @@ const index = (req, res) => {
     const sql = 'SELECT * FROM movies'
     connection.query(sql, (err, results) => {
         if (err) return res.status(500).json({ error: true, message: err.message })
-        //console.log(results);
-        res.json(results)
+
+        // Aggiungi URL completo per ogni immagine
+        const moviesWithImageUrl = results.map(movie => ({
+            ...movie,
+            imageUrl: movie.image ? `http://localhost:3000/images/${movie.image}` : null
+        }))
+
+        res.json(moviesWithImageUrl)
     })
 }
 
@@ -27,6 +33,7 @@ const show = (req, res) => {
             if (errReviews) return res.status(500).json({ error: true, message: err.message })
             console.log(resultsReviews);
             movie.reviews = resultsReviews
+            movie.imageUrl = movie.image ? `http://localhost:3000/images/${movie.image}` : null
             res.json(movie)
 
         })
@@ -36,7 +43,10 @@ const show = (req, res) => {
 
 
 const store = (req, res) => {
-    const { title, director, genre, release_year, abstract, image } = req.body
+    const { title, director, genre, release_year, abstract } = req.body
+
+    // L'immagine viene salvata da multer
+    const imagePath = req.file ? req.file.filename : null
 
     // Validazione campi obbligatori
     if (!title || !director) {
@@ -49,7 +59,7 @@ const store = (req, res) => {
     const sql = `INSERT INTO movies (title, director, genre, release_year, abstract, image) 
                  VALUES (?, ?, ?, ?, ?, ?)`
 
-    const values = [title, director, genre || null, release_year || null, abstract || null, image || null]
+    const values = [title, director, genre || null, release_year || null, abstract || null, imagePath]
 
     connection.query(sql, values, (err, results) => {
         if (err) return res.status(500).json({ error: true, message: err.message })
@@ -65,7 +75,8 @@ const store = (req, res) => {
                 genre,
                 release_year,
                 abstract,
-                image
+                image: imagePath,
+                imageUrl: imagePath ? `http://localhost:3000/images/${imagePath}` : null
             }
         })
     })
