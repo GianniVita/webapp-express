@@ -7,9 +7,8 @@ const storage = multer.diskStorage({
         cb(null, 'public/images') // cartella dove salvare le immagini
     },
     filename: (req, file, cb) => {
-        // Genera un nome unico: timestamp-originalname
-        const uniqueName = Date.now() + '-' + file.originalname
-        cb(null, uniqueName)
+        // Mantiene il nome originale del file
+        cb(null, file.originalname)
     }
 })
 
